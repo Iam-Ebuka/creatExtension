@@ -35,7 +35,7 @@ function sendChunkToAPI(chunk) {
   formData.append("video", chunk, "screen-recording.webm");
 
   // Send the chunk to the API using a fetch or XMLHttpRequest
-  fetch("https://video-upload-api.onrender.com/videos", {
+  fetch("https://video-upload-api.onrender.com/api/videos", {
     method: "POST",
     body: formData,
   })
