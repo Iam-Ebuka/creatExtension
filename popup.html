@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+
+    <title>HelpMeOut</title>
+</head>
+<body>
+    <div class="App">
+        <header class="App-headers">
+        <div class='main-header'>
+          <div style="display: flex; align-items:center;">
+            <span><img src="/images/iCON 7 1.png" class="App-logo" style="height: 28px; width: 28px;" alt="logo" />
+          </span><span><img src="images/HelpMeOut.png" class="App-logo" style="height: 20px; width:96px; padding-left: 5px;" alt="logo" /></span>
+          </div>
+          <div class='settingsClose'>
+            <div>
+              <img src="/images/setting-2.png" className="setClose-logo" alt="settings" />
+            </div>
+            <div>
+             <img src="/images/close-circle.png" className="setClose-logo" alt="close" />
+            </div>
+          </div>
+        </div>
+        <div style="width: 225px">
+          <p style="color: #413c6d; font-size: 14px; font-weight:400; line-height: 16.42px; font-family: 'Work Sans', sans-serif">This extension helps you record and share help videos with ease.</p>
+        </div>
+        </header>
+        <section style="height: 279px;">
+            <div class="main" style="display: flex; flex-direction: column; justify-content: space-between; height: 279px;">
+              <div class="FullCurrent" style="display: flex; justify-content: space-around;">
+                <div class="FullScreen" style="width: 82px; height: 56px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <img src="/images/monitor.png" style="width: 32px; height: 32px; margin: 0 auto 0 auto;">
+                  <p style="font-size: 14px; font-weight: 500; line-height: 16.42px; color: #928fab; text-align: center; font-family: 'Work Sans', sans-serif;">Full screen</p>
+                </div>
+                <div class="CurrentTab" style="width: 82px; height: 56px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <img src="/images/copy.png" style="width: 32px; height: 32px; margin: 0 auto 0 auto;">
+                  <p style="font-size: 14px; text-align: center; font-weight: 500; line-height: 16.42px; color: #120B48; font-family: 'Work Sans', sans-serif;">Current tab</p>
+                </div>
+              </div>
+              <div class="Camera" style="height: 48px; border: 1px solid #100a42; border-radius: 12px; display: flex; justify-content: center; align-items: center;">
+                <div style="width: 224px; height: 20px; display: flex; justify-content: space-between; align-items: center;">
+                  <div style="display: flex; width: 85px; justify-content: space-between; align-items: center;">
+                    <img src="/images/Vector.png" alt="camera" style="width: 19.5px; height: 13.5px;">
+                    <p style="font-family: 'Work Sans', sans-serif; font-weight: 500; font-size: 14px;">Camera</p>
+                  </div>
+                  <div style="width: 36px;">
+                    <img src="/images/_Toggle base.png" style="width: 36px; height: 20px;" alt="toggle">
+                  </div>
+                </div>
+              </div>
+              <div class="audio" style="height: 48px; border: 1px solid #100a42; border-radius: 12px; display: flex; justify-content: center; align-items: center;">
+                <div style="width: 224px; height: 20px; display: flex; justify-content: space-between; align-items: center;">
+                  <div style="display: flex; width: 64px; justify-content: space-between; align-items: center;">
+                    <img src="/images/mic.png" alt="mic" style="width: 12px; height: 21px;">
+                    <p style="font-family: 'Work Sans', sans-serif; font-weight: 500; font-size: 14px;">Audio</p>
+                  </div>
+                  <div style="width: 36px;">
+                    <img id="stop_video" src="/images/_Toggle base.png" style="width: 36px; height: 20px;" alt="toggle">
+                  </div>
+                </div>
+              </div>
+              <button id="start_video" style="height: 51px;border:none; border-radius: 12px; background-color: #120B48; color: white; font-weight: 500; font-family: 'Work Sans', sans-serif; text-align: center; display: flex; justify-content: center; align-items: center;">
+                Start Recording
+              </button>
+            </div>
+          </section>
+      </div>
+      <script src="/popup.js"></script>
+</body>
+</html>
