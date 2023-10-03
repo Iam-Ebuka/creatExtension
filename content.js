@@ -1,5 +1,3 @@
-console.log("Hi, I have been injected whoopie!!!");
-
 var recorder = null;
 var videoChunks = []; // Store video data chunks
 
@@ -38,6 +36,9 @@ function sendChunkToAPI(chunk) {
   fetch("https://video-upload-api.onrender.com/api/videos", {
     method: "POST",
     body: formData,
+    headers: {
+      // Set the appropriate Content-Type if required by your API
+    },
   })
     .then((response) => response.json())
     .then((data) => {
@@ -58,7 +59,6 @@ function sendRemainingChunksToAPI() {
   videoChunks = [];
 }
 
-
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "request_recording") {
     console.log("requesting recording");
@@ -67,18 +67,23 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     navigator.mediaDevices
       .getDisplayMedia({
-        audio: true,
+        audio: {
+            echoCancellation: true, // Enable echo cancellation
+            noiseSuppression: true, // Enable noise suppression
+            sampleRate: 44100, // You can adjust this sample rate as needed
+          },
         video: {
-          width: 9999999999,
-          height: 9999999999,
+          width: 1240, 
+          height: 647,  
         },
       })
       .then((stream) => {
         onAccessApproved(stream);
+      })
+      .catch((error) => {
+        console.error("Error accessing media:", error);
       });
   }
-
-  
 
   if (message.action === "stopvideo") {
     console.log("stopping video");
